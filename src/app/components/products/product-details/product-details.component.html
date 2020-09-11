@@ -1,0 +1,33 @@
+<div class="product" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{product.name}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{product.imageLink}}" alt="Photo of a Shiba Inu">
+        </mat-card>
+    </div>
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+        <mat-card>
+            <mat-card-content>
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <p>{{product.description}}</p>
+                    <app-price [currencyCode]="product.currencyCode" [price]="product.price"></app-price>
+                </div>
+                <hr>
+                <div class="specifications">
+                    <p>Product specifications</p>
+                    <ul>
+                        <li *ngFor="let specification of product.specifications">
+                            {{specification}}
+                        </li>
+                    </ul>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div class="footer">
+    <button mat-raised-button color="primary" (click)="seeMoreProducts()">See More Products</button>
+    <button mat-raised-button color="primary" (click)="addToCart()">{{proceedBtnText}}</button>
+</div>

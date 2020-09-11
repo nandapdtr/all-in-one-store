@@ -1,0 +1,38 @@
+<div class="shopping-cart">
+    <div class="product-card" *ngFor="let product of products">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{product.name}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="product-details">
+                    <p>{{product.description}}</p>
+                    <app-price [currencyCode]="product.currencyCode" [price]="product.price"></app-price>
+                </div>
+                <img mat-card-image src="{{product.imageLink}}" alt="">
+            </mat-card-content>
+            <mat-card-actions>
+                <div class="quantity-changer">
+                    <button mat-mini-fab color="primary" (click)="decreaseQuantity(product)">
+                        <mat-icon>remove</mat-icon>
+                    </button>
+                    <button mat-stroked-button color="">
+                        <span>{{product.quantity}}</span>
+                    </button>
+                    <button mat-mini-fab color="primary" (click)="increaseQuantity(product)">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </div>
+                <button mat-raised-button color="primary" (click)="deleteProduct(product.id)">Remove</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<div class="footer" *ngIf="products.length > 0">
+    <span class="total-price">
+        <span>{{currencyCode}}{{totalPrice}}</span>
+    </span>
+
+    <button mat-raised-button color="accent">Place Order</button>
+</div>

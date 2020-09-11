@@ -1,0 +1,56 @@
+:host {
+    background-color: lightgrey;
+
+    .shopping-cart {
+        padding: 10px;
+        height: calc(100% - 80px);
+        overflow: auto;
+
+        .product-card {
+            margin-bottom: 10px;
+        }
+    }
+
+    mat-card-content {
+        display: flex;
+        justify-content: space-between;
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .price {
+                font-weight: bold;
+            }
+        }
+
+        img {
+            width: 50%;
+            margin: 0;
+        }
+    }
+
+    mat-card-actions {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer {
+        padding: 8px;
+        margin: 0;
+        height: 40px;
+        position: fixed;
+        width: calc(100% - 16px);
+        display: flex;
+        justify-content: space-between;
+        bottom: 0;
+        box-shadow: 0 -1px 5px #ff3f80;
+        align-items: center;
+
+        .total-price {
+            font-size: 28px;
+            font-weight: bold;
+        }
+    }
+}

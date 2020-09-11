@@ -1,0 +1,16 @@
+.product {
+    padding: 10px;
+    height: calc(100% - 70px);
+    overflow: auto;
+}
+
+.footer {
+    padding: 8px;
+    margin: 0;
+    height: 40px;
+    position: fixed;
+    width: calc(100% - 16px);
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+}
