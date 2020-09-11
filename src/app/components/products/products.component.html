@@ -1,0 +1,23 @@
+<div class="products" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div class="product-card" fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" fxFlex.md="25%" *ngFor="let product of products$ | async">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{product.name}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <img mat-card-image src="{{product.imageLink}}" alt="">
+                <div class="product-details" fxLayout="row" fxLayoutAlign="space-between center">
+                    <p>{{product.description}}</p>
+                    <app-price 
+                        [currencyCode]="product.currencyCode" 
+                        [price]="product.price"
+                        padded="true"
+                        ></app-price>
+                </div>
+            </mat-card-content>
+            <mat-card-actions fxLayout="row" fxLayoutAlign="flex-end">
+                <button mat-raised-button color="primary" (click)="seeProductDetails(product.id)">Select</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>

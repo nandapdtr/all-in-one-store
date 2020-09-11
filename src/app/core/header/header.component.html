@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">
+    <span>All in one</span>
+    <mat-icon svgIcon="{{icon}}" matBadgeSize="small" [matBadgeHidden]="productsCount === 0 || inShoppingCartScreen" mat-raised-button matBadge="{{productsCount}}"
+        matBadgeColor="accent" (click)="navigate()">
+    </mat-icon>
+</mat-toolbar>
